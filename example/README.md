@@ -1,4 +1,3 @@
-
 # mdx-deck basic template
 
 This was generated with [mdx-deck][]'s `npm init deck` command.

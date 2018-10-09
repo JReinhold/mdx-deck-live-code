@@ -12,7 +12,7 @@ We build software to further this vision of a just world, or at the very least, 
 
 **Terms**
 
-*Copyright* (c) *(year)* *(owner)*. All rights reserved.
+_Copyright_ (c) _(year)_ _(owner)_. All rights reserved.
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -24,28 +24,30 @@ Redistribution and use in source and binary forms, with or without modification,
 4. This software must not be used by any organisation, website, product or service that:
 
    a) lobbies for, promotes, or derives a majority of income from actions that support or contribute to:
-      * sex trafficking
-      * human trafficking
-      * slavery
-      * indentured servitude
-      * gambling
-      * tobacco
-      * adversely addictive behaviours
-      * nuclear energy
-      * warfare
-      * weapons manufacturing
-      * war crimes
-      * violence (except when required to protect public safety)
-      * burning of forests
-      * deforestation
-      * hate speech or discrimination based on age, gender, gender identity, race, sexuality, religion, nationality
+
+   - sex trafficking
+   - human trafficking
+   - slavery
+   - indentured servitude
+   - gambling
+   - tobacco
+   - adversely addictive behaviours
+   - nuclear energy
+   - warfare
+   - weapons manufacturing
+   - war crimes
+   - violence (except when required to protect public safety)
+   - burning of forests
+   - deforestation
+   - hate speech or discrimination based on age, gender, gender identity, race, sexuality, religion, nationality
 
    b) lobbies against, or derives a majority of income from actions that discourage or frustrate:
-      * peace
-      * access to the rights set out in the Universal Declaration of Human Rights and the Convention on the Rights of the Child
-      * peaceful assembly and association (including worker associations)
-      * a safe environment or action to curtail the use of fossil fuels or prevent climate change
-      * democratic processes
+
+   - peace
+   - access to the rights set out in the Universal Declaration of Human Rights and the Convention on the Rights of the Child
+   - peaceful assembly and association (including worker associations)
+   - a safe environment or action to curtail the use of fossil fuels or prevent climate change
+   - democratic processes
 
 5. All redistribution of source code or binary form, including any modifications must be under these terms. You must inform recipients that the code is governed by these conditions, and how they can obtain a copy of this license. You may not attempt to alter the conditions of who may/may not use this software.
 

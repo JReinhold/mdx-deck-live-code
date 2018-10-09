@@ -1,0 +1,15 @@
+{
+	"defaultSeverity": "warning",
+	"extends": ["tslint-react", "tslint-config-prettier"],
+	"linterOptions": {
+		"exclude": ["node_modules/**/*.ts"]
+	},
+	"rules": {
+		"interface-name": false,
+		"member-access": [false],
+		"ordered-imports": [false],
+		"no-console": [true],
+		"no-var-requires": true,
+		"jsx-boolean-value": false
+	}
+}
