@@ -9,6 +9,7 @@
 		"dev": "tsc --watch",
 		"example": "cd example && npm start",
 		"start": "npm-run-all --parallel dev example",
+		"setup-dev": "yarn install && yarn link && cd example && yarn install && yarn link mdx-deck-live-code",
 		"format": "prettier --write 'src/**/*.{ts,tsx}'",
 		"lint": "tslint --project tsconfig.json --config tslint.json",
 		"typecheck": "tsc --noEmit",
