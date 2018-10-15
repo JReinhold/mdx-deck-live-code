@@ -1,0 +1,36 @@
+import { Head } from 'mdx-deck'
+
+export { default as theme } from './theme'
+
+<Head>
+  <title>Live code example</title>
+</Head>
+
+import { LiveCode } from 'mdx-deck-live-code';
+
+Test with high level ```<LiveCode/>``` component
+<LiveCode/>
+
+---
+
+import {LiveProvider, LivePreview, LiveEditor, LiveError} from 'mdx-deck-live-code';
+
+Test with low level components
+<LiveProvider code="<h2>🙋🏻‍♂️ 🌎</h2>">
+	<LiveError/>
+	<LivePreview/>
+	<LiveEditor/>
+</LiveProvider>
+---
+
+## Edit this file
+
+To create your presentation
+
+```notes
+- Create speaker notes in fenced code blocks
+```
+
+---
+
+<https://github.com/jxnblk/mdx-deck>

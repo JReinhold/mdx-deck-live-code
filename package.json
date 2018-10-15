@@ -1,0 +1,63 @@
+{
+	"name": "mdx-deck-live-code",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"dev": "tsc --watch",
+		"example": "cd example && npm start",
+		"start": "npm-run-all --parallel dev example",
+		"format": "prettier --write 'src/**/*.{ts,tsx}'",
+		"lint": "tslint --project tsconfig.json --config tslint.json",
+		"typecheck": "tsc --noEmit",
+		"build": "tsc",
+		"ok": "yarn typecheck && yarn lint && yarn format"
+	},
+	"dependencies": {
+		"react-live": "^1.11.0"
+	},
+	"devDependencies": {
+		"@types/react": "^16.4.16",
+		"husky": "^1.1.1",
+		"npm-run-all": "^4.1.3",
+		"prettier": "^1.14.3",
+		"pretty-quick": "^1.7.0",
+		"tslint": "^5.11.0",
+		"tslint-config-prettier": "^1.15.0",
+		"tslint-react": "^3.6.0",
+		"typescript": "^3.1.1"
+	},
+	"peerDependencies": {
+		"mdx-deck": "^1.7.7",
+		"react": ">=15.0.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
+	},
+	"author": "Jeppe Reinhold <jeppereinhold@gmail.com> (https://reinhold.is)",
+	"homepage": "https://github.com/JReinhold/mdx-deck-live-code#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JReinhold/mdx-deck-live-code.git"
+	},
+	"bugs": {
+		"url": "https://github.com/JReinhold/mdx-deck-live-code/issues"
+	},
+	"license": "NoHarm-draft",
+	"description": "A component for mdx-deck to live code in your slides 🤯",
+	"keywords": [
+		"mdx",
+		"mdx-deck",
+		"slides",
+		"react",
+		"reactjs",
+		"code",
+		"live",
+		"edit",
+		"playground"
+	]
+}
