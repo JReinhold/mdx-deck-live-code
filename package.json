@@ -1,6 +1,6 @@
 {
 	"name": "mdx-deck-live-code",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"main": "dist/index.js",
 	"files": [
 		"dist"
@@ -49,7 +49,7 @@
 		"url": "https://github.com/JReinhold/mdx-deck-live-code/issues"
 	},
 	"license": "NoHarm-draft",
-	"description": "A component for mdx-deck to live code in your slides 🤯",
+	"description": "A component for mdx-deck for live coding directly in your slides. 🤯",
 	"keywords": [
 		"mdx",
 		"mdx-deck",
