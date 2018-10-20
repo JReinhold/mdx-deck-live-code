@@ -2,6 +2,7 @@ import theme from 'mdx-deck/themes';
 
 export default {
 	...theme,
+	liveCode: {},
 
 	// Customize your presentation theme here.
 	//

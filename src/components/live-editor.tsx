@@ -4,6 +4,7 @@ import {
 	LiveEditorProps as BaseLiveEditorProps,
 } from 'react-live';
 import { OmitRef } from '../types';
+import styled from 'styled-components';
 
 const isMacLike =
 	'navigator' in window && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
@@ -54,7 +55,6 @@ export class LiveEditor extends React.PureComponent<
 
 	render() {
 		const { focusEditor } = this.state;
-		// we have to remove 'ref' prop to make TypeScript happy ¯\_(ツ)_/¯
 		const { ...rest } = this.props;
 
 		return (
@@ -64,11 +64,17 @@ export class LiveEditor extends React.PureComponent<
 				onBlur={this.blurEditor}
 				onKeyDown={this.blurOnKeyCombo}
 			>
-				<BaseLiveEditor
+				<StyledBaseLiveEditor
 					contentEditable={focusEditor}
+					// we have to remove 'ref' prop to make TypeScript happy ¯\_(ツ)_/¯
 					{...rest as OmitRef<BaseLiveEditorProps>}
 				/>
 			</div>
 		);
 	}
 }
+
+const StyledBaseLiveEditor = styled(BaseLiveEditor)`
+	height: 100%;
+	overflow-x: auto;
+`;
