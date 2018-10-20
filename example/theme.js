@@ -2,7 +2,11 @@ import theme from 'mdx-deck/themes';
 
 export default {
 	...theme,
-	liveCode: {},
+	liveCode: {
+		// container: {
+		// 	marginTop: '20em'
+		// }
+	},
 
 	// Customize your presentation theme here.
 	//

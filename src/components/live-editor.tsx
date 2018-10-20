@@ -58,7 +58,7 @@ export class LiveEditor extends React.PureComponent<
 		const { ...rest } = this.props;
 
 		return (
-			<div
+			<StyledEditorContainer
 				onFocus={this.focusEditor}
 				onClick={this.focusEditor}
 				onBlur={this.blurEditor}
@@ -69,12 +69,17 @@ export class LiveEditor extends React.PureComponent<
 					// we have to remove 'ref' prop to make TypeScript happy ¯\_(ツ)_/¯
 					{...rest as OmitRef<BaseLiveEditorProps>}
 				/>
-			</div>
+			</StyledEditorContainer>
 		);
 	}
 }
 
 const StyledBaseLiveEditor = styled(BaseLiveEditor)`
 	height: 100%;
-	overflow-x: auto;
+	max-height: 100vh;
+	overflow: auto;
+`;
+
+const StyledEditorContainer = styled.div`
+	flex: 1;
 `;
