@@ -47,7 +47,11 @@ export const LiveCode = withTheme(LiveCodeBase);
 - Revert architecture surrounding withLive
 - Read from global theme
 - better style handling of LiveEditor
-- examples
+- examples:
+ - sizes
+ - individual styling
+ - types of code (plain, react function, etc.)
+ - usage of low level comps to create vertical layout 
 - ⛴
 */
 
