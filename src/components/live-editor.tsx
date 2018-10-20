@@ -81,5 +81,5 @@ const StyledBaseLiveEditor = styled(BaseLiveEditor)`
 `;
 
 const StyledEditorContainer = styled.div`
-	flex: 1;
+	width: 50%;
 `;

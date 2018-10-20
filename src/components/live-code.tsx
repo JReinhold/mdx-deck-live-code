@@ -11,13 +11,14 @@ import { LiveEditor, LiveEditorProps } from './live-editor';
 import { OmitRef } from '../types';
 
 interface Props {
-	title?: string;
 	code?: string;
+	title?: string;
+	size?: Size;
+	errors?: boolean;
 	providerProps?: OmitRef<LiveProviderProps>;
 	editorProps?: OmitRef<LiveEditorProps>;
 	previewProps?: OmitRef<React.HTMLProps<HTMLDivElement>>;
 	errorProps?: OmitRef<React.HTMLProps<HTMLDivElement>>;
-	size: Size;
 	theme: any;
 }
 type Size = 'small' | 'medium' | 'large' | 'fullscreen';
@@ -26,42 +27,48 @@ type Size = 'small' | 'medium' | 'large' | 'fullscreen';
  * A high level component to quickly add live coding abilities
  */
 const LiveCodeBase: React.SFC<Props> = ({
-	code,
+	code = '<p>🙋‍♀️ 🌍</p>',
+	size = 'medium',
+	errors = true,
 	providerProps,
 	...containerProps
 }) => {
 	return (
 		<LiveProvider code={code} {...providerProps}>
-			<LiveCodeContainer {...containerProps} />
+			<LiveCodeContainer errors={errors} size={size} {...containerProps} />
 		</LiveProvider>
 	);
 };
 
-LiveCodeBase.defaultProps = {
-	code: '<h1>🙋‍♀️ 🌍</h1>',
-	size: 'fullscreen',
-};
-
 export const LiveCode = withTheme(LiveCodeBase);
+
+/* TODO
+- Fix withLive typings for props
+- Revert architecture surrounding withLive
+- Read from global theme
+- better style handling of LiveEditor
+- examples
+- ⛴
+*/
 
 interface LiveCodeContainerProps {
 	title?: string;
+	size: Size;
+	errors: boolean;
 	editorProps?: OmitRef<LiveEditorProps>;
 	previewProps?: OmitRef<React.HTMLProps<HTMLDivElement>>;
 	errorProps?: OmitRef<React.HTMLProps<HTMLDivElement>>;
-	size: Size;
-	// TODO: Fix withLive typings for props
 	live?: any;
 }
 const LiveCodeContainer = withLive<LiveCodeContainerProps>(
-	({ title, editorProps, previewProps, errorProps, size, live }) => {
+	({ title, errors, editorProps, previewProps, errorProps, size, live }) => {
 		return (
 			<LiveDeck size={size}>
-				{!(size === 'fullscreen') && <p>{title}</p>}
+				{title && !(size === 'fullscreen') && <p>{title}</p>}
 				<LiveContainer size={size}>
 					<LiveEditor {...editorProps} />
 					<StyledLivePreview {...previewProps} />
-					<StyledLiveError {...errorProps} />
+					{errors && <StyledLiveError {...errorProps} />}
 				</LiveContainer>
 			</LiveDeck>
 		);
@@ -99,12 +106,12 @@ const LiveContainer = styled.div<{ size: Size }>`
 		`box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
 		border-radius: 0.25rem;`
 	}
-	
+
 	${props => props.theme.liveCode && props.theme.liveCode.container} 
 `;
 
 const StyledLivePreview = styled(LivePreview)`
-	flex: 1;
+	width: 50%;
 `;
 
 const StyledLiveError = styled(LiveError)`
@@ -117,4 +124,7 @@ const StyledLiveError = styled(LiveError)`
 	color #ff8080;
 	font-family: monospace;
 	font-size: 0.75em;
+	height: 3em;
+	overflow-y: auto;
+	resize: vertical;
 `;
