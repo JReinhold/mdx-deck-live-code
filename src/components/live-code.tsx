@@ -2,8 +2,8 @@ import * as React from 'react';
 import {
 	LiveProvider,
 	LiveError,
-	LivePreview,
 	LiveProviderProps,
+	LivePreview,
 } from 'react-live';
 import styled, { withTheme } from 'styled-components';
 import { LiveEditor, LiveEditorProps } from './live-editor';
@@ -40,8 +40,8 @@ const LiveCodeBase: React.SFC<Props> = ({
 			<LiveDeck size={size}>
 				{title && !(size === 'fullscreen') && <p>{title}</p>}
 				<LiveContainer size={size}>
-					<LiveEditor {...editorProps} />
 					<StyledLivePreview {...previewProps} />
+					<StyledLiveEditor {...editorProps} />
 					{errors && <StyledLiveError {...errorProps} />}
 				</LiveContainer>
 			</LiveDeck>
@@ -52,9 +52,8 @@ const LiveCodeBase: React.SFC<Props> = ({
 export const LiveCode = withTheme(LiveCodeBase);
 
 /* TODO
-- add propTypes and defaultProps??
-- Read from global theme
 - better style handling of LiveEditor
+- support differet deck themes
 - examples:
  - sizes
  - individual styling
@@ -62,7 +61,7 @@ export const LiveCode = withTheme(LiveCodeBase);
  - usage of low level comps to create vertical layout 
 - document stuff
  - theming
- - (low level components doesn't apply global theme)
+ - (low level components doen't apply global theme)
 - ⛴
 */
 
@@ -100,8 +99,14 @@ const LiveContainer = styled.div<{ size: Size }>`
 	${props => props.theme.liveCode && props.theme.liveCode.container} 
 `;
 
+// add extra spacing at the bottom, to make sure no code are ever obscured by the error element
+const StyledLiveEditor = styled(LiveEditor)`
+	padding-bottom: 5rem !important;
+`;
+
 const StyledLivePreview = styled(LivePreview)`
 	width: 50%;
+	background: white;
 	${props => props.theme.liveCode && props.theme.liveCode.preview};
 `;
 
@@ -115,7 +120,7 @@ const StyledLiveError = styled(LiveError)`
 	color #ff8080;
 	font-family: monospace;
 	font-size: 0.75em;
-	height: 3em;
+	height: 5rem;
 	overflow-y: auto;
 	resize: vertical;
 	${props => props.theme.liveCode && props.theme.liveCode.error} 

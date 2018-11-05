@@ -24,8 +24,6 @@ npm install --save-dev mdx-deck-live-code
 
 ## Usage 🏃‍♀️
 
-<!-- eventually link to a CodeSandbox here -->
-
 ## Current issues ⚠️
 
 - Editing the code currently doesn't sync between the presenter and observer instances. Therefore **you need to edit the code in the observer window, if you want your audience to see it**❗️❗️❗️
