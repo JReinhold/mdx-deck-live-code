@@ -3,7 +3,6 @@ import {
 	LiveEditor as BaseLiveEditor,
 	LiveEditorProps as BaseLiveEditorProps,
 } from 'react-live';
-import { OmitRef } from '../types';
 import styled from 'styled-components';
 
 const isMacLike =
@@ -55,7 +54,8 @@ export class LiveEditor extends React.PureComponent<
 
 	render() {
 		const { focusEditor } = this.state;
-		const { ...rest } = this.props;
+		// we have to remove 'ref' prop to make TypeScript happy ¯\_(ツ)_/¯
+		const { ref, ...rest } = this.props;
 
 		return (
 			<StyledEditorContainer
@@ -64,11 +64,7 @@ export class LiveEditor extends React.PureComponent<
 				onBlur={this.blurEditor}
 				onKeyDown={this.blurOnKeyCombo}
 			>
-				<StyledBaseLiveEditor
-					contentEditable={focusEditor}
-					// we have to remove 'ref' prop to make TypeScript happy ¯\_(ツ)_/¯
-					{...rest as OmitRef<BaseLiveEditorProps>}
-				/>
+				<StyledBaseLiveEditor contentEditable={focusEditor} {...rest} />
 			</StyledEditorContainer>
 		);
 	}
@@ -79,6 +75,7 @@ const StyledBaseLiveEditor = styled(BaseLiveEditor)`
 	max-height: 100vh;
 	overflow: auto;
 	font-size: 0.7em;
+	${props => props.theme.liveCode && props.theme.liveCode.editor};
 `;
 
 const StyledEditorContainer = styled.div`

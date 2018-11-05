@@ -62,6 +62,7 @@ export const LiveCode = withTheme(LiveCodeBase);
  - usage of low level comps to create vertical layout 
 - document stuff
  - theming
+ - (low level components doesn't apply global theme)
 - ⛴
 */
 
@@ -96,12 +97,12 @@ const LiveContainer = styled.div<{ size: Size }>`
 		`box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
 		border-radius: 0.25rem;`
 	}
-
 	${props => props.theme.liveCode && props.theme.liveCode.container} 
 `;
 
 const StyledLivePreview = styled(LivePreview)`
 	width: 50%;
+	${props => props.theme.liveCode && props.theme.liveCode.preview};
 `;
 
 const StyledLiveError = styled(LiveError)`
@@ -117,4 +118,5 @@ const StyledLiveError = styled(LiveError)`
 	height: 3em;
 	overflow-y: auto;
 	resize: vertical;
+	${props => props.theme.liveCode && props.theme.liveCode.error} 
 `;
