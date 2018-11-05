@@ -29,6 +29,7 @@ npm install --save-dev mdx-deck-live-code
 ## Current issues ⚠️
 
 - Editing the code currently doesn't sync between the presenter and observer instances. Therefore **you need to edit the code in the observer window, if you want your audience to see it**❗️❗️❗️
+- The carret often becomes invisible, if it is moved outside the non-scrolled area. Still investigating, help wanted.
 
 ## Related / Credits 🙏
 

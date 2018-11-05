@@ -35,7 +35,7 @@ export class LiveEditor extends React.PureComponent<
 	};
 
 	/**
-	 * remove focus from editor when user presses:
+	 * remove focus from editor when user presses one of:
 	 * - Escape
 	 * - CTRL + M (Windows and Linux)
 	 * - CTRL + SHIFT + M (Mac)
@@ -78,6 +78,7 @@ const StyledBaseLiveEditor = styled(BaseLiveEditor)`
 	height: 100%;
 	max-height: 100vh;
 	overflow: auto;
+	font-size: 0.7em;
 `;
 
 const StyledEditorContainer = styled.div`

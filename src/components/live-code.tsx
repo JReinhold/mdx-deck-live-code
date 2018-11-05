@@ -4,7 +4,6 @@ import {
 	LiveError,
 	LivePreview,
 	LiveProviderProps,
-	withLive,
 } from 'react-live';
 import styled, { withTheme } from 'styled-components';
 import { LiveEditor, LiveEditorProps } from './live-editor';
@@ -31,42 +30,13 @@ const LiveCodeBase: React.SFC<Props> = ({
 	size = 'medium',
 	errors = true,
 	providerProps,
-	...containerProps
+	title,
+	editorProps,
+	previewProps,
+	errorProps,
 }) => {
 	return (
 		<LiveProvider code={code} {...providerProps}>
-			<LiveCodeContainer errors={errors} size={size} {...containerProps} />
-		</LiveProvider>
-	);
-};
-
-export const LiveCode = withTheme(LiveCodeBase);
-
-/* TODO
-- Fix withLive typings for props
-- Revert architecture surrounding withLive
-- Read from global theme
-- better style handling of LiveEditor
-- examples:
- - sizes
- - individual styling
- - types of code (plain, react function, etc.)
- - usage of low level comps to create vertical layout 
-- ⛴
-*/
-
-interface LiveCodeContainerProps {
-	title?: string;
-	size: Size;
-	errors: boolean;
-	editorProps?: OmitRef<LiveEditorProps>;
-	previewProps?: OmitRef<React.HTMLProps<HTMLDivElement>>;
-	errorProps?: OmitRef<React.HTMLProps<HTMLDivElement>>;
-	live?: any;
-}
-const LiveCodeContainer = withLive<LiveCodeContainerProps>(
-	({ title, errors, editorProps, previewProps, errorProps, size, live }) => {
-		return (
 			<LiveDeck size={size}>
 				{title && !(size === 'fullscreen') && <p>{title}</p>}
 				<LiveContainer size={size}>
@@ -75,9 +45,25 @@ const LiveCodeContainer = withLive<LiveCodeContainerProps>(
 					{errors && <StyledLiveError {...errorProps} />}
 				</LiveContainer>
 			</LiveDeck>
-		);
-	},
-);
+		</LiveProvider>
+	);
+};
+
+export const LiveCode = withTheme(LiveCodeBase);
+
+/* TODO
+- add propTypes and defaultProps??
+- Read from global theme
+- better style handling of LiveEditor
+- examples:
+ - sizes
+ - individual styling
+ - types of code (plain, react function, etc.)
+ - usage of low level comps to create vertical layout 
+- document stuff
+ - theming
+- ⛴
+*/
 
 const LiveDeck = styled.div<{ size: Size }>`
 	display: flex;
