@@ -1,28 +1,188 @@
-import { Head } from 'mdx-deck'
-
-export { default as theme } from './theme'
+import { Head } from 'mdx-deck';
+export { default as theme } from './theme';
+import { LiveCode } from 'mdx-deck-live-code';
+import {
+	LiveProvider,
+	LivePreview,
+	LiveEditor,
+	LiveError,
+} from 'mdx-deck-live-code';
 
 <Head>
-  <title>mdx-deck-live-code demo</title>
+	<title>mdx-deck-live-code demo</title>
 </Head>
 
 [mdx-deck-live-code](https://github.com/jreinhold/mdx-deck-live-code) demo 🎭
 
 ---
 
-import { LiveCode } from 'mdx-deck-live-code';
-
-<LiveCode title="Basic Usage of <LiveCode />"/>
+<LiveCode
+	size="small"
+	title="There's a size for everyone"
+	code="<p>Small? 👇</p>"
+/>
 
 ---
 
-import {LiveProvider, LivePreview, LiveEditor, LiveError} from 'mdx-deck-live-code';
+<LiveCode
+	size="medium"
+	title="There's a size for everyone"
+	code="<h3>Medium? 👉</h3>"
+/>
+
+---
+
+<LiveCode
+	size="large"
+	title="There's a size for everyone"
+	code="<h2>Large? 👆</h2>"
+/>
+
+---
+
+<LiveCode size="fullscreen" code="<h1>...or maybe just all in? 🖥</h1>" />
+
+---
+
+<LiveCode
+	code={`<div>You can style your {"<LiveCode/>"} 
+  individually per slide,
+  targeting each element directly:
+  <pre><code>{\`<LiveCode
+  previewProps={{
+    style: {
+      textAlign: 'left',
+      padding: '0.5em'
+      }
+    }}
+  editorProps={{
+    style: {
+      fontSize: '0.5em',
+      background: '#001628'
+    }
+  }}
+/>\`}</code></pre>
+  </div>`}
+	size="large"
+	title="Customization"
+	previewProps={{
+		style: { textAlign: 'left', padding: '0.5em', fontSize: '0.7em' },
+	}}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+<LiveCode
+	code={`<div>Or you can use the global mdx-deck theme:
+  <pre><code>{\`export default {
+  ...theme,
+  liveCode: {
+    container: {
+      // container styles
+    },
+    editor: {
+      // editor styles
+    },
+    preview: {
+      // preview styles
+    },
+    error: {
+      // error styles
+    }
+  }
+};\`}</code></pre>
+  </div>`}
+	size="fullscreen"
+	previewProps={{
+		style: { textAlign: 'left', padding: '0.5em', fontSize: '0.7em' },
+	}}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+<LiveCode
+	code={`
+  <div>
+  <p>Use either one of the key combos</p>
+    <ul>
+      <li>
+        <code>ESC</code>
+      </li>
+      <li>
+        <code>CTRL + M</code> (Windows and Linux)
+      </li>
+      <li>
+        <code>CTRL + SHIFT + M</code> (Mac)
+      </li>
+    </ul>
+	To unfocus the editor, and navigate the deck again
+  </div>`}
+	size="large"
+	title={`"Argh, I can't use my arrow keys anymore! 😱"`}
+	previewProps={{
+		style: { textAlign: 'left', padding: '0.5em', fontSize: '0.7em' },
+	}}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+<LiveCode
+	title="It even does React Functional Components, thanks to react-live"
+	code={`() => {
+  const type = "Functional Component";
+  return (<p>Hi, I'm a {type}!</p>)
+}`}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+<LiveCode
+	title="... and classes"
+	code={`class MyComp extends React.Component {
+	  constructor(){
+		  this.state = {
+			  value: 'class'
+		  };
+	  }
+	  render() {
+  return (<div><p>This is a {this.state.value} component!</p>
+  <input onChange={(e) => this.setState({value: e.target.value})} value={this.state.value} />
+  </div>)
+}
+}`}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+(imperetive)
+in fact, it does anything react-live (link) does!
+(noInline)
+
+---
+
+For more complex code, you can write it in a file instead of as inline text
+using npm install raw loader
+bla bla
+
+---
+
+NOTES:
+
+- use example files for more complex examples (or all?) for better formatting
+
+---
 
 Test with low level components
+
 <LiveProvider code="<h2>🙋🏻‍♂️ 🌎</h2>">
-	<LiveError/>
-	<LivePreview/>
-	<LiveEditor/>
+  <LiveError/>
+  <LivePreview/>
+  <LiveEditor/>
 </LiveProvider>
 ---
 

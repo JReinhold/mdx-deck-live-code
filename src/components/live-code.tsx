@@ -55,8 +55,6 @@ export const LiveCode = withTheme(LiveCodeBase);
 - better style handling of LiveEditor
 - support differet deck themes
 - examples:
- - sizes
- - individual styling
  - types of code (plain, react function, etc.)
  - usage of low level comps to create vertical layout 
 - document stuff
