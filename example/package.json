@@ -12,14 +12,14 @@
 	"devDependencies": {
 		"mdx-deck": "^1.6.7"
 	},
-	"dependencies": {
-		"mdx-deck-live-code": "1.0.0"
-	},
 	"author": "Jeppe Reinhold <jeppereinhold@gmail.com> (https://reinhold.is)",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/JReinhold/mdx-deck-live-code.git"
 	},
 	"license": "NoHarm-draft",
-	"private": false
+	"private": false,
+	"dependencies": {
+		"raw-loader": "^0.5.1"
+	}
 }
