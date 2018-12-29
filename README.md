@@ -112,3 +112,5 @@ The library is built using [TypeScript](https://www.typescriptlang.org), formatt
 ## 📝 License
 
 Released under the [Do No Harm License (draft)](https://github.com/raisely/NoHarm)
+
+By [@DrReinhold](https://twitter.com/DrReinhold)
