@@ -18,14 +18,13 @@ interface Props {
 	editorProps?: OmitRef<LiveEditorProps>;
 	previewProps?: OmitRef<React.HTMLProps<HTMLDivElement>>;
 	errorProps?: OmitRef<React.HTMLProps<HTMLDivElement>>;
-	theme: any;
 }
 type Size = 'small' | 'medium' | 'large' | 'fullscreen';
 
 /**
  * A high level component to quickly add live coding abilities
  */
-const LiveCodeBase: React.SFC<Props> = ({
+const LiveCodeBase: React.SFC<Props & { theme: any }> = ({
 	code = '<p>🙋‍♀️ 🌍</p>',
 	size = 'medium',
 	errors = true,

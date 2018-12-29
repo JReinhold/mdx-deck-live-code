@@ -10,7 +10,8 @@
 		"help": "mdx-deck"
 	},
 	"devDependencies": {
-		"mdx-deck": "^1.6.7"
+		"mdx-deck": "^1.6.7",
+		"raw-loader": "^0.5.1"
 	},
 	"author": "Jeppe Reinhold <jeppereinhold@gmail.com> (https://reinhold.is)",
 	"repository": {
@@ -18,8 +19,5 @@
 		"url": "https://github.com/JReinhold/mdx-deck-live-code.git"
 	},
 	"license": "NoHarm-draft",
-	"private": false,
-	"dependencies": {
-		"raw-loader": "^0.5.1"
-	}
+	"private": false
 }
