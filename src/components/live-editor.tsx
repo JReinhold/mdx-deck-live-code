@@ -54,6 +54,7 @@ export class LiveEditor extends React.PureComponent<
 
 	render() {
 		const { focusEditor } = this.state;
+		const { className, ...props } = this.props;
 
 		return (
 			<div
@@ -61,22 +62,21 @@ export class LiveEditor extends React.PureComponent<
 				onClick={this.focusEditor}
 				onBlur={this.blurEditor}
 				onKeyDown={this.blurOnKeyCombo}
-				className={this.props.className}
+				className={className}
 			>
-				<StyledBaseLiveEditor
-					contentEditable={focusEditor}
-					{...this.props as any}
-				/>
+				<StyledBaseLiveEditor contentEditable={focusEditor} {...props as any} />
 			</div>
 		);
 	}
 }
 
+// add extra spacing at the bottom to make sure errors don't obscure code
 const StyledBaseLiveEditor = styled(BaseLiveEditor)`
 	height: 100%;
 	max-height: 100vh;
 	overflow: auto;
 	font-size: 0.7em;
 	width: 100%;
+	padding-bottom: 5rem !important;
 	${props => props.theme.liveCode && props.theme.liveCode.editor};
 `;

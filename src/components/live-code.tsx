@@ -51,18 +51,6 @@ const LiveCodeBase: React.SFC<Props> = ({
 
 export const LiveCode = withTheme(LiveCodeBase);
 
-/* TODO
-- better style handling of LiveEditor
-- support differet deck themes
-- examples:
- - types of code (plain, react function, etc.)
- - usage of low level comps to create vertical layout 
-- document stuff
- - theming
- - (low level components doen't apply global theme)
-- ⛴
-*/
-
 const LiveDeck = styled.div<{ size: Size }>`
 	display: flex;
 	flex-direction: column;
@@ -87,7 +75,6 @@ const LiveContainer = styled.div<{ size: Size }>`
 	width: 100%;
 	height: 100%;
 	display: flex;
-	overflow: hidden;
 	position: relative;
 	
 	${({size}) => size !== 'fullscreen' &&
@@ -97,15 +84,14 @@ const LiveContainer = styled.div<{ size: Size }>`
 	${props => props.theme.liveCode && props.theme.liveCode.container} 
 `;
 
-// add extra spacing at the bottom, to make sure no code are ever obscured by the error element
-const StyledLiveEditor = styled(LiveEditor)`
-	padding-bottom: 5rem !important;
-`;
-
 const StyledLivePreview = styled(LivePreview)`
 	width: 50%;
 	background: white;
 	${props => props.theme.liveCode && props.theme.liveCode.preview};
+`;
+
+const StyledLiveEditor = styled(LiveEditor)`
+	width: 50%;
 `;
 
 const StyledLiveError = styled(LiveError)`
