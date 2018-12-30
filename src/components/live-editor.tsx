@@ -6,7 +6,9 @@ import {
 import styled from 'styled-components';
 
 const isMacLike =
-	'navigator' in window && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
+	typeof window !== 'undefined' &&
+	'navigator' in window &&
+	/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
 
 interface LiveEditorState {
 	focusEditor: boolean;
