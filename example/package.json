@@ -9,6 +9,9 @@
 		"image": "mdx-deck screenshot deck.mdx",
 		"help": "mdx-deck"
 	},
+	"dependencies": {
+		"mdx-deck-live-code": "^0.1.0"
+	},
 	"devDependencies": {
 		"mdx-deck": "^1.8.2",
 		"raw-loader": "^1.0.0"

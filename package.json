@@ -18,7 +18,11 @@
 		"lint:readme": "markdownlint README.md",
 		"typecheck": "tsc --noEmit",
 		"build": "rollup -c",
-		"ok": "yarn typecheck && yarn lint && yarn format"
+		"ok": "yarn typecheck && yarn lint && yarn format",
+		"prepare": "yarn build",
+		"prepublishOnly": "yarn ok",
+		"version": "yarn ok && git add -A src",
+		"postversion": "git push && git push --tags"
 	},
 	"dependencies": {
 		"react-live": "^1.11.0"

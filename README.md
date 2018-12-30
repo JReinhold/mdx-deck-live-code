@@ -4,7 +4,10 @@
 
 A component for [mdx-deck](https://github.com/jxnblk/mdx-deck) for live coding directly in your slides. 🤯
 
-<!-- badges - circleci status - npm version - downloads - deps up to date? -->
+<!-- build status badge -->
+
+[![Version](https://img.shields.io/npm/v/mdx-deck-live-code.svg?style=flat-square)](https://www.npmjs.com/package/mdx-deck-live-code)
+![Dependency Status](https://img.shields.io/librariesio/github/jreinhold/mdx-deck-live-code.svg?style=flat-square)
 
 ```bash
 npm install --save-dev mdx-deck-live-code
