@@ -25,7 +25,7 @@ type Size = 'small' | 'medium' | 'large' | 'fullscreen';
  * A high level component to quickly add live coding abilities
  */
 const LiveCodeBase: React.SFC<Props & { theme: any }> = ({
-	code = '<p>🙋‍♀️ 🌍</p>',
+	code,
 	size = 'medium',
 	errors = true,
 	providerProps,
