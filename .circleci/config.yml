@@ -67,10 +67,6 @@ jobs:
           key: example-dependencies-{{ checksum "example/yarn.lock" }}
 
       - run:
-          name: 'Example: Link Package'
-          command: |
-            yarn link && cd example && yarn link mdx-deck-live-code
-      - run:
           name: 'Example: Build'
           working_directory: ./example
           command: |
