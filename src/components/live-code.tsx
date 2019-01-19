@@ -36,12 +36,12 @@ const LiveCodeBase: React.SFC<Props & { theme: any }> = ({
 }) => {
 	return (
 		<LiveProvider code={code} {...providerProps}>
-			<LiveDeck size={size}>
+			<LiveDeck size={size as Size}>
 				{title && !(size === 'fullscreen') && <p>{title}</p>}
-				<LiveContainer size={size}>
-					<StyledLivePreview {...previewProps} />
-					<StyledLiveEditor {...editorProps} />
-					{errors && <StyledLiveError {...errorProps} />}
+				<LiveContainer size={size as Size}>
+					<StyledLivePreview {...previewProps as any} />
+					<StyledLiveEditor {...editorProps as any} />
+					{errors && <StyledLiveError {...errorProps as any} />}
 				</LiveContainer>
 			</LiveDeck>
 		</LiveProvider>
