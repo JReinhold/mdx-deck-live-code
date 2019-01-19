@@ -16,11 +16,12 @@
 		"start": "npm-run-all --parallel dev example",
 		"setup-dev": "yarn install && yarn link && cd example && yarn install && yarn link mdx-deck-live-code",
 		"format": "prettier --write '{src/**/*.{ts,tsx},README.md}'",
+		"format:ci": "prettier --list-different '{src/**/*.{ts,tsx},README.md}'",
 		"lint": "npm-run-all --parallel lint:**",
 		"lint:src": "tslint --project tsconfig.json --config tslint.json",
 		"lint:readme": "markdownlint README.md",
 		"typecheck": "tsc --noEmit",
-		"ok": "yarn typecheck && yarn lint && yarn format",
+		"ok": "yarn typecheck && yarn lint && yarn format:ci && yarn build",
 		"prepare": "yarn build",
 		"prepublishOnly": "yarn ok"
 	},
