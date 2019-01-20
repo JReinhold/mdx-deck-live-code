@@ -22,7 +22,6 @@
 		"lint:readme": "markdownlint README.md",
 		"typecheck": "tsc --noEmit",
 		"ok": "yarn typecheck && yarn lint && yarn format:ci && yarn build",
-		"prepare": "yarn build",
 		"prepublishOnly": "yarn ok"
 	},
 	"dependencies": {
