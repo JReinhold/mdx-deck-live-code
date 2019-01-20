@@ -101,7 +101,7 @@ Then, in the `code` prop, reference another file using the `require('!raw-loader
 ## 🤝 Contributing
 
 Ideas and feedback are ALWAYS welcome, just submit an issue.
-Pull Requests are also very welcome.
+Pull Requests are also very welcome, but **please always make PRs into the `next` branch**
 
 The library is built using [TypeScript](https://www.typescriptlang.org), bundled with [Microbundle](https://github.com/developit/microbundle), formatted with [Prettier](https://prettier.io/), linted with [TSLint](https://palantir.github.io/tslint/) and [markdownlint](https://github.com/DavidAnson/markdownlint), packaged with [yarn](https://yarnpkg.com), hosted on [Netlify](https://www.netlify.com/) and developed with love ❤️ and sweat 💦.
 
