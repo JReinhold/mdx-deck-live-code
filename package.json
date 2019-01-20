@@ -1,6 +1,6 @@
 {
 	"name": "mdx-deck-live-code",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"main": "dist/index.js",
 	"umd:main": "dist/index.umd.js",
 	"module": "dist/index.es.js",
@@ -22,7 +22,6 @@
 		"lint:readme": "markdownlint README.md",
 		"typecheck": "tsc --noEmit",
 		"ok": "yarn typecheck && yarn lint && yarn format:ci && yarn build",
-		"prepare": "yarn build",
 		"prepublishOnly": "yarn ok"
 	},
 	"dependencies": {
