@@ -96,6 +96,7 @@ Then, in the `code` prop, reference another file using the `require('!raw-loader
 - [mdx-deck](https://github.com/jxnblk/mdx-deck) by the incredible [Brent Jackson](https://jxnblk.com/)
 - [react-live](https://github.com/FormidableLabs/react-live) which this library uses internally, by the astonishing [Formidable Labs](https://formidable.com/)
 - [CodeSurfer](https://github.com/pomber/code-surfer) (React component for scrolling, zooming and highlighting _static_ code) which inspired this library, by the fantastic [Rodrigo Pombo](https://twitter.com/pomber)
+- [mdx-code](https://github.com/pranaygp/mdx-code) - (Similar to this library it delivers a JS playground using RunKit), by the marvelous [Pranay Prakash](https://twitter.com/pranaygp)
 - [Component Playground in Spectacle](https://github.com/FormidableLabs/spectacle#component-playground) which is similar to this library, but for [slides built with Spectacle](https://github.com/FormidableLabs/spectacle) instead of mdx-deck slides. Also by the astonishing [Formidable Labs](https://formidable.com/)
 
 ## 🤝 Contributing
