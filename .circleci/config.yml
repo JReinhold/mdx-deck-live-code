@@ -1,0 +1,73 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - checkout
+
+      # Install and cache yarn dependencies
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - dependencies-
+      - run:
+          name: Install Depencendies
+          command: |
+            yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "yarn.lock" }}
+
+      # Following steps are the same as "yarn ok" in pacakge.json
+      - run:
+          name: Typecheck
+          command: |
+            yarn typecheck
+      - run:
+          name: Lint
+          command: |
+            yarn lint
+      - run:
+          name: Check Format
+          command: |
+            yarn format:ci
+
+      - restore_cache:
+          keys:
+            - build-caches
+      - run:
+          name: Build Source
+          command: |
+            yarn build
+      - save_cache:
+          paths:
+            - .rts2_cache_cjs
+            - .rts2_cache_es
+            - .rts2_cache_umd
+          key: build-caches
+
+      # Install and cache yarn dependencies for the example project
+      - restore_cache:
+          keys:
+            - example-dependencies-{{ checksum "example/yarn.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - example-dependencies-
+      - run:
+          name: 'Example: Install Depencendies'
+          working_directory: ./example
+          command: |
+            yarn install
+      - save_cache:
+          paths:
+            - example/node_modules
+          key: example-dependencies-{{ checksum "example/yarn.lock" }}
+
+      - run:
+          name: 'Example: Build'
+          working_directory: ./example
+          command: |
+            yarn build

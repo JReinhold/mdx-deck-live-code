@@ -1,0 +1,26 @@
+{
+	"name": "mdx-deck-live-code-example",
+	"version": "1.0.0",
+	"description": "An example of using the mdx-deck-live-code module in an mdx-deck",
+	"scripts": {
+		"start": "mdx-deck deck.mdx",
+		"build": "mdx-deck build deck.mdx",
+		"pdf": "mdx-deck pdf deck.mdx",
+		"image": "mdx-deck screenshot deck.mdx",
+		"help": "mdx-deck"
+	},
+	"dependencies": {
+		"mdx-deck-live-code": "^0.1.0"
+	},
+	"devDependencies": {
+		"mdx-deck": "^1.8.2",
+		"raw-loader": "^1.0.0"
+	},
+	"author": "Jeppe Reinhold <jeppereinhold@gmail.com> (https://reinhold.is)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JReinhold/mdx-deck-live-code.git"
+	},
+	"license": "NoHarm-draft",
+	"private": false
+}

@@ -1,0 +1,205 @@
+import { Head } from 'mdx-deck';
+export { default as theme } from './theme';
+import { LiveCode } from 'mdx-deck-live-code';
+
+<Head>
+	<title>mdx-deck-live-code demo</title>
+</Head>
+
+# [mdx-deck-live-code](https://github.com/jreinhold/mdx-deck-live-code) Demonstration 🤯
+
+Live code JSX and Javascript with previews, directly in your slides
+
+---
+
+<LiveCode
+	title="Try editing the Hello World example below! 👇🏾"
+	code="<p>🙋‍♀️ 🌍</p>"
+/>
+
+---
+
+<LiveCode
+	title="There's a size for everyone"
+	size="small"
+	code="<p>Small? 👇</p>"
+/>
+
+---
+
+<LiveCode
+	title="There's a size for everyone"
+	size="medium"
+	code="<h3>Medium? 👉</h3>"
+/>
+
+---
+
+<LiveCode
+	title="There's a size for everyone"
+	size="large"
+	code="<h2>Large? 👆</h2>"
+/>
+
+---
+
+<LiveCode size="fullscreen" code="<h1>...or maybe just all in? 🖥</h1>" />
+
+---
+
+<LiveCode
+	title="Customization"
+	code={`<div>You can style your {"<LiveCode/>"} 
+  individually per slide,
+  targeting each element directly:
+  <pre><code>{\`<LiveCode
+  previewProps={{
+    style: {
+      textAlign: 'left',
+      padding: '0.5em'
+      }
+    }}
+  editorProps={{
+    style: {
+      fontSize: '0.5em',
+      background: '#001628'
+    }
+  }}
+/>\`}</code></pre>
+  </div>`}
+	size="large"
+	previewProps={{
+		style: { textAlign: 'left', padding: '0.5em', fontSize: '0.7em' },
+	}}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+<LiveCode
+	code={`<div>Or you can use the global <code>mdx-deck</code> theme:
+  <pre><code>{\`export default {
+  ...theme,
+  liveCode: {
+    container: {
+      // container styles
+    },
+    editor: {
+      // editor styles
+    },
+    preview: {
+      // preview styles
+    },
+    error: {
+      // error styles
+    }
+  }
+};\`}</code></pre>
+  </div>`}
+	size="fullscreen"
+	previewProps={{
+		style: { textAlign: 'left', padding: '0.5em', fontSize: '0.7em' },
+	}}
+	editorProps={{ style: { fontSize: '0.5em' } }}
+/>
+
+---
+
+<LiveCode
+	title={`Smart handling of focus and arrow keys`}
+	code={`
+  <div>
+  <p>While in the editor, use either one of the key combos</p>
+    <ul>
+      <li>
+        <code>ESC</code>
+      </li>
+      <li>
+        <code>CTRL + M</code> (Windows and Linux)
+      </li>
+      <li>
+        <code>CTRL + SHIFT + M</code> (Mac)
+      </li>
+    </ul>
+	To unfocus the editor, and navigate the deck again
+  </div>`}
+	size="large"
+	previewProps={{
+		style: { textAlign: 'left', padding: '0.5em', fontSize: '0.7em' },
+	}}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+<LiveCode
+	title="It even does React Functional Components, thanks to react-live"
+	code={`() => {
+  const componentType = "Functional Component";
+  return (<p>Hi, I'm a {componentType}!</p>)
+}`}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+<LiveCode
+	title="... and classes"
+	code={`class MyComp extends React.Component {
+  constructor(){
+    this.state = {
+    value: 'class'
+    };
+  }
+  render() {
+    return (
+      <div>
+        <p>
+					This is a {this.state.value} component!
+				</p>
+        <input
+		  		onChange={
+			  		(e) => this.setState({value: e.target.value})
+					}
+		  		value={this.state.value}
+				/>
+      </div>
+	  );
+  }
+}`}
+	size="large"
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+<LiveCode
+	title="In fact, it does anything react-live does!"
+	code={`const sayWhaaat = 'Hello';
+const toWhooo = 'world!';
+const GreetDaPeeps = () => (
+		<p>
+			{sayWhaaat} {toWhooo}
+		</p>
+	);
+render(GreetDaPeeps);`}
+	providerProps={{ noInline: true }}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+<LiveCode
+	code={require('!raw-loader!./external-file.js')}
+	size="large"
+	previewProps={{ style: { fontSize: '0.8em' } }}
+	editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+/>
+
+---
+
+# 🙋‍♀️
+
+### See more at the [mdx-deck-live-code repository](https://github.com/jreinhold/mdx-deck-live-code)
+
+By [@DrReinhold](https://twitter.com/drreinhold)
