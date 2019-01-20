@@ -4,8 +4,7 @@
 
 A component for [mdx-deck](https://github.com/jxnblk/mdx-deck) for live coding directly in your slides. 🤯
 
-<!-- build status badge -->
-
+![Build Status](https://img.shields.io/circleci/project/github/JReinhold/mdx-deck-live-code/master.svg?style=flat-square)
 [![Version](https://img.shields.io/npm/v/mdx-deck-live-code.svg?style=flat-square)](https://www.npmjs.com/package/mdx-deck-live-code)
 ![Dependency Status](https://img.shields.io/librariesio/github/jreinhold/mdx-deck-live-code.svg?style=flat-square)
 
@@ -104,7 +103,7 @@ Then, in the `code` prop, reference another file using the `require('!raw-loader
 Ideas and feedback are ALWAYS welcome, just submit an issue.
 Pull Requests are also very welcome.
 
-The library is built using [TypeScript](https://www.typescriptlang.org), formatted with [Prettier](https://prettier.io/), linted with [TSLint](https://palantir.github.io/tslint/) and [markdownlint](https://github.com/DavidAnson/markdownlint), packaged with [yarn](https://yarnpkg.com) and developed with love ❤️.
+The library is built using [TypeScript](https://www.typescriptlang.org), bundled with [Microbundle](https://github.com/developit/microbundle), formatted with [Prettier](https://prettier.io/), linted with [TSLint](https://palantir.github.io/tslint/) and [markdownlint](https://github.com/DavidAnson/markdownlint), packaged with [yarn](https://yarnpkg.com), hosted on [Netlify](https://www.netlify.com/) and developed with love ❤️ and sweat 💦.
 
 1. `yarn dev` starts the TypeScript building of the library.
 2. `yarn example` starts the demo in the `example/` folder.
