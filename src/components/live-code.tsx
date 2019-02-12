@@ -91,6 +91,7 @@ const StyledLivePreview = styled(LivePreview)`
 
 const StyledLiveEditor = styled(LiveEditor)`
 	width: 50%;
+	${props => props.theme.liveCode && props.theme.liveCode.editor};
 `;
 
 const StyledLiveError = styled(LiveError)`
